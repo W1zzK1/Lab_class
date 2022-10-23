@@ -23,7 +23,7 @@ public:
 			this->amountRubles += amountRubles;
 		}
 		else {
-			cout << "Íåäîïóñòèìàÿ ñóììà áàëàíñà" << endl;
+			cout << "ÐÐµÐ´Ð¾Ð¿ÑƒÑÑ‚Ð¸Ð¼Ð°Ñ ÑÑƒÐ¼Ð¼Ð° Ð±Ð°Ð»Ð°Ð½ÑÐ°" << endl;
 		}
 	}
 	void changeOwnerSurname(string ownerSurname) {
@@ -43,7 +43,7 @@ public:
 	}
 	void getOwner() {
 		if ((ownerSurname == "") || (accountNumber == "") || (accrualPercentage == 0) || (amountRubles == 0)) {
-			cout << "Ââåäèòå íåäîñòàþùèå äàííûå";
+			cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½ÐµÐ´Ð¾ÑÑ‚Ð°ÑŽÑ‰Ð¸Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ";
 		}
 		else {
 			cout << "Surname : " << ownerSurname << endl;
@@ -56,7 +56,7 @@ public:
 
 	void withdrawMoneyFromAccount(int amount) {
 		if (amountRubles == 0) {
-			cout << "Íà âàøåì ñ÷åòó íåò äåíåã";
+			cout << "ÐÐ° Ð²Ð°ÑˆÐµÐ¼ ÑÑ‡ÐµÑ‚Ñƒ Ð½ÐµÑ‚ Ð´ÐµÐ½ÐµÐ³";
 		}
 		else {
 			amountRubles -= amount;
@@ -64,7 +64,7 @@ public:
 	}
 	void depositMoneyToAccount(int amount) {
 		if ((this->amountRubles + amountRubles) > 9999) {
-			cout << "Íåäîïóñòèìàÿ ñóììà áàëàíñà" << endl;
+			cout << "ÐÐµÐ´Ð¾Ð¿ÑƒÑÑ‚Ð¸Ð¼Ð°Ñ ÑÑƒÐ¼Ð¼Ð° Ð±Ð°Ð»Ð°Ð½ÑÐ°" << endl;
 		}
 		else {
 			amountRubles += amount;
@@ -87,68 +87,68 @@ public:
 	void amountInWords() {
 		setlocale(LC_ALL, "Russian");
 		if (amountRubles < 0) {
-			cout << "Íà âàøåì ñ÷åòó íåò äåíåã";
+			cout << "ÐÐ° Ð²Ð°ÑˆÐµÐ¼ ÑÑ‡ÐµÑ‚Ñƒ Ð½ÐµÑ‚ Ð´ÐµÐ½ÐµÐ³";
 
 		}switch (amountRubles / 1000)
 		{
-		case 1: cout << "Îäíà òûñÿ÷à "; break;
-		case 2: cout << "Äâå òûñÿ÷è "; break;
-		case 3: cout << "Òðè òûñÿ÷è "; break;
-		case 4: cout << "×åòûðå òûñÿ÷è "; break;
-		case 5: cout << "Ïÿòü òûñÿ÷ "; break;
-		case 6: cout << "Øåñòü òûñÿ÷ "; break;
-		case 7: cout << "Ñåìü òûñÿ÷ "; break;
-		case 8: cout << "Âîñåìü òûñÿ÷ "; break;
-		case 9: cout << "Äåâÿòü òûñÿ÷ "; break;
+		case 1: cout << "ÐžÐ´Ð½Ð° Ñ‚Ñ‹ÑÑÑ‡Ð° "; break;
+		case 2: cout << "Ð”Ð²Ðµ Ñ‚Ñ‹ÑÑÑ‡Ð¸ "; break;
+		case 3: cout << "Ð¢Ñ€Ð¸ Ñ‚Ñ‹ÑÑÑ‡Ð¸ "; break;
+		case 4: cout << "Ð§ÐµÑ‚Ñ‹Ñ€Ðµ Ñ‚Ñ‹ÑÑÑ‡Ð¸ "; break;
+		case 5: cout << "ÐŸÑÑ‚ÑŒ Ñ‚Ñ‹ÑÑÑ‡ "; break;
+		case 6: cout << "Ð¨ÐµÑÑ‚ÑŒ Ñ‚Ñ‹ÑÑÑ‡ "; break;
+		case 7: cout << "Ð¡ÐµÐ¼ÑŒ Ñ‚Ñ‹ÑÑÑ‡ "; break;
+		case 8: cout << "Ð’Ð¾ÑÐµÐ¼ÑŒ Ñ‚Ñ‹ÑÑÑ‡ "; break;
+		case 9: cout << "Ð”ÐµÐ²ÑÑ‚ÑŒ Ñ‚Ñ‹ÑÑÑ‡ "; break;
 		}
 		switch ((amountRubles % 1000) / 100)
 		{
-		case 1: cout << "Ñòî "; break;
-		case 2: cout << "Äâåñòè "; break;
-		case 3: cout << "Òðèñòà "; break;
-		case 4: cout << "×åòûðåñòà "; break;
-		case 5: cout << "Ïÿòñîò "; break;
-		case 6: cout << "Øåñòüñîò "; break;
-		case 7: cout << "Ñåìüñîò "; break;
-		case 8: cout << "Âîñåìüñîò "; break;
-		case 9: cout << "Äåâÿòüñîò "; break;
+		case 1: cout << "Ð¡Ñ‚Ð¾ "; break;
+		case 2: cout << "Ð”Ð²ÐµÑÑ‚Ð¸ "; break;
+		case 3: cout << "Ð¢Ñ€Ð¸ÑÑ‚Ð° "; break;
+		case 4: cout << "Ð§ÐµÑ‚Ñ‹Ñ€ÐµÑÑ‚Ð° "; break;
+		case 5: cout << "ÐŸÑÑ‚ÑÐ¾Ñ‚ "; break;
+		case 6: cout << "Ð¨ÐµÑÑ‚ÑŒÑÐ¾Ñ‚ "; break;
+		case 7: cout << "Ð¡ÐµÐ¼ÑŒÑÐ¾Ñ‚ "; break;
+		case 8: cout << "Ð’Ð¾ÑÐµÐ¼ÑŒÑÐ¾Ñ‚ "; break;
+		case 9: cout << "Ð”ÐµÐ²ÑÑ‚ÑŒÑÐ¾Ñ‚ "; break;
 		}switch ((amountRubles % 100) / 10)
 		{
-		case 2: cout << "äâàäöàòü "; break;
-		case 3: cout << "òðèäöàòü "; break;
-		case 4: cout << "ñîðîê "; break;
-		case 5: cout << "ïÿòäåñÿò "; break;
-		case 6: cout << "øåñòüäåñÿò "; break;
-		case 7: cout << "Ñåìüäåñÿò "; break;
-		case 8: cout << "Âîñåìüäåñÿò "; break;
-		case 9: cout << "Äåâÿíîñòî "; break;
+		case 2: cout << "Ð´Ð²Ð°Ð´Ñ†Ð°Ñ‚ÑŒ "; break;
+		case 3: cout << "Ñ‚Ñ€Ð¸Ð´Ñ†Ð°Ñ‚ÑŒ "; break;
+		case 4: cout << "ÑÐ¾Ñ€Ð¾Ðº "; break;
+		case 5: cout << "Ð¿ÑÑ‚Ð´ÐµÑÑÑ‚ "; break;
+		case 6: cout << "ÑˆÐµÑÑ‚ÑŒÐ´ÐµÑÑÑ‚ "; break;
+		case 7: cout << "Ð¡ÐµÐ¼ÑŒÐ´ÐµÑÑÑ‚ "; break;
+		case 8: cout << "Ð’Ð¾ÑÐµÐ¼ÑŒÐ´ÐµÑÑÑ‚ "; break;
+		case 9: cout << "Ð”ÐµÐ²ÑÐ½Ð¾ÑÑ‚Ð¾ "; break;
 		}
 		if (amountRubles % 100 >= 10 & amountRubles % 100 < 20) {
 			switch (amountRubles % 100) {
-			case 10: cout << "äåñÿòü"; break;
-			case 11: cout << "îäèíàäöàòü"; break;
-			case 12: cout << "äâåíàäöàòü"; break;
-			case 13: cout << "òðèíàäöàòü"; break;
-			case 14: cout << "÷åòûðíàäöàòü"; break;
-			case 15: cout << "ïÿòíàäöàòü"; break;
-			case 16: cout << "øåñòíàäöàòü"; break;
-			case 17: cout << "ñåìíàäöàòü"; break;
-			case 18: cout << "âîñåìíàäöàòü"; break;
-			case 19: cout << "äåâÿòíàäöàòü"; break;
+			case 10: cout << "Ð´ÐµÑÑÑ‚ÑŒ"; break;
+			case 11: cout << "Ð¾Ð´Ð¸Ð½Ð°Ð´Ñ†Ð°Ñ‚ÑŒ"; break;
+			case 12: cout << "Ð´Ð²ÐµÐ½Ð°Ð´Ñ†Ð°Ñ‚ÑŒ"; break;
+			case 13: cout << "Ñ‚Ñ€Ð¸Ð½Ð°Ð´Ñ†Ð°Ñ‚ÑŒ"; break;
+			case 14: cout << "Ñ‡ÐµÑ‚Ñ‹Ñ€Ð½Ð°Ð´Ñ†Ð°Ñ‚ÑŒ"; break;
+			case 15: cout << "Ð¿ÑÑ‚Ð½Ð°Ð´Ñ†Ð°Ñ‚ÑŒ"; break;
+			case 16: cout << "ÑˆÐµÑÑ‚Ð½Ð°Ð´Ñ†Ð°Ñ‚ÑŒ"; break;
+			case 17: cout << "ÑÐµÐ¼Ð½Ð°Ð´Ñ†Ð°Ñ‚ÑŒ"; break;
+			case 18: cout << "Ð²Ð¾ÑÐµÐ¼Ð½Ð°Ð´Ñ†Ð°Ñ‚ÑŒ"; break;
+			case 19: cout << "Ð´ÐµÐ²ÑÑ‚Ð½Ð°Ð´Ñ†Ð°Ñ‚ÑŒ"; break;
 			}
 		}
 		else {
 			switch (amountRubles % 10)
 			{
-			case 1: cout << "îäèí\n"; break;
-			case 2: cout << "äâà\n"; break;
-			case 3: cout << "òðè\n"; break;
-			case 4: cout << "÷åòûðå"; break;
-			case 5: cout << "ïÿòü"; break;
-			case 6: cout << "øåñòü"; break;
-			case 7: cout << "ñåìü"; break;
-			case 8: cout << "âîñåìü"; break;
-			case 9: cout << "äåâÿòü"; break;
+			case 1: cout << "Ð¾Ð´Ð¸Ð½\n"; break;
+			case 2: cout << "Ð´Ð²Ð°\n"; break;
+			case 3: cout << "Ñ‚Ñ€Ð¸\n"; break;
+			case 4: cout << "Ñ‡ÐµÑ‚Ñ‹Ñ€Ðµ"; break;
+			case 5: cout << "Ð¿ÑÑ‚ÑŒ"; break;
+			case 6: cout << "ÑˆÐµÑÑ‚ÑŒ"; break;
+			case 7: cout << "ÑÐµÐ¼ÑŒ"; break;
+			case 8: cout << "Ð²Ð¾ÑÐµÐ¼ÑŒ"; break;
+			case 9: cout << "Ð´ÐµÐ²ÑÑ‚ÑŒ"; break;
 			}
 		}
 	}
