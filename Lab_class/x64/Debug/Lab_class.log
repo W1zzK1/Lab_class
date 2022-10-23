@@ -1,0 +1,5 @@
+﻿  Lab_class.cpp
+C:\Users\W1zzA\source\repos\Lab_class\Lab_class\Account.h(78,21): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\W1zzA\source\repos\Lab_class\Lab_class\Account.h(83,19): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\W1zzA\source\repos\Lab_class\Lab_class\Account.h(126,1): warning C4554: "&": проверьте приоритет операторов на ошибки; для уточнения приоритета используйте скобки
+  Lab_class.vcxproj -> C:\Users\W1zzA\source\repos\Lab_class\x64\Debug\Lab_class.exe
