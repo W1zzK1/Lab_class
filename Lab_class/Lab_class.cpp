@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "Account.h"
 using namespace std;
 /*
@@ -14,8 +14,7 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
 
-    Account account;
-    account.setOwner("Demidov","12345", 10.0, 5000);
+    Account account("Demidov", "12345", 10.0, 5000);
     account.getOwner();
     cout << "" << endl;
     cout << "" << endl;
