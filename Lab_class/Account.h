@@ -12,19 +12,14 @@ private:
 	int amountRubles = 0;
 
 public:
-	void setOwner(string ownerSurname,
+	Account(string ownerSurname,
 		string accountNumber,
 		float accrualPercentage,
 		int amountRubles) {
-		if ((this->amountRubles + amountRubles) < 9999) {
 			this->ownerSurname = ownerSurname;
 			this->accountNumber = accountNumber;
 			this->accrualPercentage = accrualPercentage;
 			this->amountRubles += amountRubles;
-		}
-		else {
-			cout << "Недопустимая сумма баланса" << endl;
-		}
 	}
 	void changeOwnerSurname(string ownerSurname) {
 		this->ownerSurname = ownerSurname;
@@ -44,6 +39,9 @@ public:
 	void getOwner() {
 		if ((ownerSurname == "") || (accountNumber == "") || (accrualPercentage == 0) || (amountRubles == 0)) {
 			cout << "Введите недостающие данные";
+		}
+		else if (amountRubles > 9999) {
+			cout << "Недопустимая сумма баланса" << endl;
 		}
 		else {
 			cout << "Surname : " << ownerSurname << endl;
@@ -75,14 +73,24 @@ public:
 		accrualPercentage += percentage;
 	}
 	int convertAmountToDollars() {
-		int amountDollars = amountRubles * 0.62;
-		cout << "Your amount in dollars : " << amountDollars;
-		return amountDollars;
+		if (amountRubles > 9999) {
+			cout << "Недопустимая сумма баланса" << endl;
+		}
+		else {
+			int amountDollars = amountRubles * 0.62;
+			cout << "Your amount in dollars : " << amountDollars;
+			return amountDollars;
+		}
 	}
 	int convertAmountInEuros() {
-		int amountEuros = amountRubles * 0.60;
-		cout << "Your amount in euros : " << amountEuros;
-		return amountEuros;
+		if (amountRubles > 9999) {
+			cout << "Недопустимая сумма баланса" << endl;
+		}
+		else {
+			int amountEuros = amountRubles * 0.60;
+			cout << "Your amount in euros : " << amountEuros;
+			return amountEuros;
+		}
 	}
 	void amountInWords() {
 		setlocale(LC_ALL, "Russian");
